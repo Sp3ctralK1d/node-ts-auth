@@ -17,7 +17,8 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
     res.send('Hello')
 })
 
-app.listen(3000, async () => {
+const port = process.env.PORT || 3000
+app.listen(port, async () => {
     console.log(`Server is ready`)
 
     const mongoConnections = await mongoose.connect('mongodb://localhost:27017/auth', {
@@ -26,6 +27,6 @@ app.listen(3000, async () => {
     })
     console.log('DB is ready') 
 
-    console.log(`Listening on port 3000`)
+    console.log(`Listening on port ${port}`)
 
 })
