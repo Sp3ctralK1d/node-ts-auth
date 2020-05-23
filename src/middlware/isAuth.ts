@@ -8,5 +8,7 @@ const getTokenFromHeader = (req: Request) => {
 }
 
 export default jwt({
-    
+    secret: 'secret',
+    userProperty: 'token',
+    getToken: getTokenFromHeader
 })
