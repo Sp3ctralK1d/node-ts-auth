@@ -14,7 +14,7 @@ app.use('/api', routes)
 
 
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
-    res.send('Hello')
+    res.send('api check')
 })
 
 const port = process.env.PORT || 3000
